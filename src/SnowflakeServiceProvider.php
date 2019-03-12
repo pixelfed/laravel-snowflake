@@ -1,9 +1,9 @@
 <?php
 
-namespace Kra8\Snowflake;
+namespace Pixelfed\Snowflake;
 
 use Illuminate\Support\ServiceProvider;
-use Kra8\Snowflake\Snowflake;
+use Pixelfed\Snowflake\Snowflake;
 
 class SnowflakeServiceProvider extends ServiceProvider
 {

@@ -1,5 +1,5 @@
 <?php
-namespace Kra8\Snowflake;
+namespace Pixelfed\Snowflake;
 
 use Exception;
 use Illuminate\Support\Facades\Config;
@@ -8,34 +8,19 @@ use Illuminate\Support\Facades\Log;
 class Snowflake
 {
     const TIMESTAMP_LEFT_SHIFT      = 22;
-
     const DATACENTER_ID_LEFT_SHIFT  = 17;
-
     const WORKER_ID_LEFT_SHIFT      = 12;
-
     private $epoch;
-
     private $lastTimestamp;
-
     private $datacenterId;
-
     private $sequence;
-
     private $workerId;
 
     public function __construct()
     {
-        if ($epoch = strtotime(Config::get('snowflake.epoch'))) {
-            // *1000 for msec.
-            $this->epoch = $epoch * 1000;
-        } else {
-            $errorLog = 'Fail read from snowflake epoch of config. Check date time format of epoch.';
-            Log::error($errorLog);
-            throw new Exception($errorLog);
-        }
-
-        $this->workerId         = Config::get('snowflake.worker_id', 1);
-        $this->datacenterId     = Config::get('snowflake.datacenter_id', 1);
+        $this->epoch            = 1549756800000;
+        $this->workerId         = 1;
+        $this->datacenterId     = 1;
         $this->lastTimestamp    = $this->epoch;
         $this->sequence         = 0;
     }

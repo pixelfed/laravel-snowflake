@@ -1,7 +1,7 @@
 <?php
-namespace Kra8\Snowflake;
+namespace Pixelfed\Snowflake;
 
-use Kra8\Snowflake\Snowflake;
+use Pixelfed\Snowflake\Snowflake;
 
 trait HasSnowflakePrimary
 {

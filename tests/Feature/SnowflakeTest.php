@@ -1,8 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Kra8\Snowflake\Snowflake;
-use Kra8\Snowflake\SnowflakeServiceProvider;
+use Pixelfed\Snowflake\Snowflake;
+use Pixelfed\Snowflake\SnowflakeServiceProvider;
 use Illuminate\Support\Facades\Config;
 
 class SnowflakeTest extends Orchestra\Testbench\TestCase
